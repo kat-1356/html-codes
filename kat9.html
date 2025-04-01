@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Frequency</title>
+    <script>
+        function charFreq(str) {
+            return str.split('').reduce((freq, char) => {
+                freq[char] = (freq[char] || 0) + 1;
+                return freq;
+            }, {});
+        }
+    </script>
+</head>
+<body>
+    <h2>Character Frequency Counter</h2>
+    <input id="charInput" placeholder="Enter text">
+    <button onclick="document.getElementById('charResult').innerText = JSON.stringify(charFreq(charInput.value), null, 2);">Count</button>
+    <pre id="charResult"></pre>
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>User Info Form</title>
+    <script type="text/javascript">
+        function displayInfo() {
+            var name = document.getElementById("name").value;
+            var age = parseInt(document.getElementById("age").value);
+            var hometown = document.getElementById("hometown").value;
+            var yearOfBirth = new Date().getFullYear() - age;
+            
+            document.getElementById("result").innerHTML = 
+                "<p>Name: " + name + "</p>" +
+                "<p>Year of Birth: " + yearOfBirth + "</p>" +
+                "<p><a href='https://www.google.com/search?q=" + encodeURIComponent(hometown) + "' target='_blank'>Search " + hometown + " on Google</a></p>";
+        }
+    </script>
+</head>
+<body>
+    <h2>User Information Form</h2>
+    <form onsubmit="event.preventDefault(); displayInfo();">
+        Name: <input type="text" id="name" required /><br />
+        Age: <input type="number" id="age" required /><br />
+        Hometown: <input type="text" id="hometown" required /><br />
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+</body>
+</html>
+

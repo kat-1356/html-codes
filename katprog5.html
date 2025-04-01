@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Bad Transformer</title>
+    <script>
+        function notBad(sentence) {
+            let notIndex = sentence.indexOf("not");
+            let badIndex = sentence.indexOf("bad");
+
+            if (notIndex !== -1 && badIndex !== -1 && badIndex > notIndex) {
+                return sentence.slice(0, notIndex) + "good" + sentence.slice(badIndex + 3);
+            }
+            return sentence;
+        }
+
+        function transformText() {
+            let inputText = document.getElementById("sentenceInput").value;
+            document.getElementById("output").innerText = notBad(inputText);
+        }
+    </script>
+</head>
+<body>
+    <h2>Not Bad Transformer</h2>
+    <input id="sentenceInput" type="text" placeholder="Enter a sentence">
+    <button onclick="transformText()">Transform</button>
+    <p><strong>Output:</strong> <span id="output"></span></p>
+</body>
+</html>
+

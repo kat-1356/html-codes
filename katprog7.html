@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Christmas Card Translator</title>
+    <script>
+        function translateToSwedish(text) {
+            const lexicon = {"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "new":"nytt", "year":"\u00E5r"};
+            return text.split(" ").map(word => lexicon[word.toLowerCase()] || word).join(" ");
+        }
+    </script>
+</head>
+<body>
+    <h2>Christmas Card Translator</h2>
+    <input id="swedishInput" placeholder="Enter text">
+    <button onclick="document.getElementById('swedishResult').innerText = translateToSwedish(swedishInput.value);">Translate</button>
+    <p id="swedishResult"></p>
+</body>
+</html>
+

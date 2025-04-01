@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Numbers Average</title>
+    <script>
+        function generateNumbers() {
+            let count = parseInt(prompt("How many random numbers to generate?"));
+            if (isNaN(count) || count <= 0) return;
+            
+            let numbers = Array.from({ length: count }, () => Math.floor(Math.random() * 100) + 1);
+            let avg = numbers.reduce((sum, num) => sum + num, 0) / count;
+            
+            document.getElementById('result').innerHTML = `Numbers: ${numbers.join(', ')}<br>Average: ${avg.toFixed(2)}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Random Numbers Generator</h2>
+    <button onclick="generateNumbers()">Generate</button>
+    <p id="result"></p>
+</body>
+</html>
+

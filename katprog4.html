@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FixStart Function</title>
+    <script>
+        function fixStart(str) {
+            if (str.length < 1) return str;
+            let firstChar = str[0];
+            let regex = new RegExp(firstChar, 'g');
+            return firstChar + str.slice(1).replace(regex, '*');
+        }
+        
+        function processInput() {
+            let inputStr = document.getElementById("inputStr").value;
+            document.getElementById("output").innerText = fixStart(inputStr);
+        }
+    </script>
+</head>
+<body>
+    <h2>FixStart Function</h2>
+    <input type="text" id="inputStr" placeholder="Enter a word">
+    <button onclick="processInput()">Fix</button>
+    <p>Output: <span id="output"></span></p>
+</body>
+</html>
+

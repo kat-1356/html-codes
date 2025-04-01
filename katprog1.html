@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <script>
+        function squareNumber() {
+            let num = parseFloat(document.getElementById('squareInput').value);
+            let result = num * num;
+            document.getElementById('squareResult').innerText = `The result of squaring the number ${num} is ${result}.`;
+        }
+
+        function halfNumber() {
+            let num = parseFloat(document.getElementById('halfInput').value);
+            let result = num / 2;
+            document.getElementById('halfResult').innerText = `Half of ${num} is ${result}.`;
+        }
+
+        function percentOf() {
+            let num1 = parseFloat(document.getElementById('percentInput1').value);
+            let num2 = parseFloat(document.getElementById('percentInput2').value);
+            let result = (num1 / num2) * 100;
+            document.getElementById('percentResult').innerText = `${num1} is ${result.toFixed(2)}% of ${num2}.`;
+        }
+
+        function areaOfCircle() {
+            let radius = parseFloat(document.getElementById('circleInput').value);
+            let result = Math.PI * radius * radius;
+            document.getElementById('circleResult').innerText = `The area for a circle with radius ${radius} is ${result.toFixed(2)}.`;
+        }
+
+        function performAllOperations() {
+            let num = parseFloat(document.getElementById('allInput').value);
+            let half = num / 2;
+            let squared = half * half;
+            let area = Math.PI * squared * squared;
+            let percentage = (area / squared) * 100;
+            document.getElementById('allResult').innerText = `Half of ${num} is ${half}.\nThe result of squaring the number ${half} is ${squared}.\nThe area for a circle with radius ${squared} is ${area.toFixed(2)}.\n${area.toFixed(2)} is ${percentage.toFixed(2)}% of ${squared}.`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Calculator</h2>
+    
+    <label>Enter a number to square:</label>
+    <input id="squareInput" type="number">
+    <button onclick="squareNumber()">Square</button>
+    <p id="squareResult"></p>
+    
+    <label>Enter a number to halve:</label>
+    <input id="halfInput" type="number">
+    <button onclick="halfNumber()">Half</button>
+    <p id="halfResult"></p>
+    
+    <label>Enter two numbers to find percentage:</label>
+    <input id="percentInput1" type="number"> of 
+    <input id="percentInput2" type="number">
+    <button onclick="percentOf()">Calculate Percentage</button>
+    <p id="percentResult"></p>
+    
+    <label>Enter radius to calculate circle area:</label>
+    <input id="circleInput" type="number">
+    <button onclick="areaOfCircle()">Calculate Area</button>
+    <p id="circleResult"></p>
+    
+    <label>Enter a number for all operations:</label>
+    <input id="allInput" type="number">
+    <button onclick="performAllOperations()">Perform All</button>
+    <p id="allResult"></p>
+</body>
+</html>
+

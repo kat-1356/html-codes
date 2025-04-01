@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Rollover Image</title>
+    <script type="text/javascript">
+        function changeImage(imgSrc) {
+            document.getElementById("rolloverImage").src = imgSrc;
+        }
+    </script>
+</head>
+<body>
+    <h2>Hover Over the Image</h2>
+    <img id="rolloverImage" src="image1.jpg" width="300" height="200"
+         onmouseover="changeImage('image2.jpg')"
+         onmouseout="changeImage('image1.jpg')" 
+         alt="Rollover Image" />
+</body>
+</html>
+

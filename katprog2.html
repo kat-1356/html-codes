@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MixUp Function</title>
+    <script>
+        function mixUp() {
+            let str1 = document.getElementById("input1").value;
+            let str2 = document.getElementById("input2").value;
+            if (str1.length < 2 || str2.length < 2) {
+                document.getElementById("result").innerText = "Strings must be at least 2 characters long.";
+                return;
+            }
+            let mixed = str2.slice(0, 2) + str1.slice(2) + " " + str1.slice(0, 2) + str2.slice(2);
+            document.getElementById("result").innerText = "Result: " + mixed;
+        }
+    </script>
+</head>
+<body>
+    <h2>MixUp Function</h2>
+    <label>First String: <input type="text" id="input1"></label><br><br>
+    <label>Second String: <input type="text" id="input2"></label><br><br>
+    <button onclick="mixUp()">Mix Up</button>
+    <p id="result"></p>
+</body>
+</html>

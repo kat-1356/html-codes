@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Maximum</title>
+    <script>
+        function max() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let result;
+            
+            if (num1 > num2) {
+                result = num1;
+            } else {
+                result = num2;
+            }
+            
+            document.getElementById("maxResult").innerText = "Maximum: " + result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Find Maximum of Two Numbers</h1>
+    <label>Enter first number:</label>
+    <input type="number" id="num1">
+    <label>Enter second number:</label>
+    <input type="number" id="num2">
+    <button onclick="max()">Find Max</button>
+    <p id="maxResult"></p>
+</body>
+</html>
+

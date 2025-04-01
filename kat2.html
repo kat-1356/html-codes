@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Maximum of Three</title>
+    <script>
+        function maxOfThree() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let num3 = parseFloat(document.getElementById("num3").value);
+            let result;
+            
+            if (num1 >= num2 && num1 >= num3) {
+                result = num1;
+            } else if (num2 >= num1 && num2 >= num3) {
+                result = num2;
+            } else {
+                result = num3;
+            }
+            
+            document.getElementById("maxThreeResult").innerText = "Maximum: " + result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Find Maximum of Three Numbers</h1>
+    <label>Enter first number:</label>
+    <input type="number" id="num1">
+    <label>Enter second number:</label>
+    <input type="number" id="num2">
+    <label>Enter third number:</label>
+    <input type="number" id="num3">
+    <button onclick="maxOfThree()">Find Max</button>
+    <p id="maxThreeResult"></p>
+</body>
+</html>
+

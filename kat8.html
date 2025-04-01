@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Functions</title>
+    <script>
+        function findLongestWord(words) {
+            return Math.max(...words.map(word => word.length));
+        }
+
+        function filterLongWords(words, i) {
+            return words.filter(word => word.length > i);
+        }
+    </script>
+</head>
+<body>
+    <h2>Find Longest Word Length</h2>
+    <input id="longestInput" placeholder="Enter words, comma-separated">
+    <button onclick="document.getElementById('longestResult').innerText = findLongestWord(longestInput.value.split(','));">Find</button>
+    <p id="longestResult"></p>
+
+    <h2>Filter Long Words</h2>
+    <input id="filterInput" placeholder="Enter words, comma-separated">
+    <input id="lengthInput" type="number" placeholder="Enter length">
+    <button onclick="document.getElementById('filterResult').innerText = filterLongWords(filterInput.value.split(','), Number(lengthInput.value));">Filter</button>
+    <p id="filterResult"></p>
+</body>
+</html>
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Functions</title>
+    <script>
+        function translate(text) {
+            return text.replace(/[^aeiou\s]/gi, c => c + "o" + c);
+        }
+
+        function sum(arr) {
+            return arr.reduce((a, b) => a + b, 0);
+        }
+
+        function multiply(arr) {
+            return arr.reduce((a, b) => a * b, 1);
+        }
+
+        function reverse(text) {
+            return text.split('').reverse().join('');
+        }
+
+        function translateToSwedish(text) {
+            const lexicon = {"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "new":"nytt", "year":"\u00E5r"};
+            return text.split(" ").map(word => lexicon[word.toLowerCase()] || word).join(" ");
+        }
+    </script>
+</head>
+<body>
+    <h2>Translate Rövarspråket</h2>
+    <input id="textInput" placeholder="Enter text">
+    <button onclick="document.getElementById('translationResult').innerText = translate(textInput.value);">Translate</button>
+    <p id="translationResult"></p>
+
+    <h2>Sum</h2>
+    <input id="sumInput" placeholder="1,2,3">
+    <button onclick="document.getElementById('sumResult').innerText = sum(sumInput.value.split(',').map(Number));">Sum</button>
+    <p id="sumResult"></p>
+
+    <h2>Multiply</h2>
+    <input id="multiplyInput" placeholder="1,2,3">
+    <button onclick="document.getElementById('multiplyResult').innerText = multiply(multiplyInput.value.split(',').map(Number));">Multiply</button>
+    <p id="multiplyResult"></p>
+
+    <h2>Reverse String</h2>
+    <input id="reverseInput" placeholder="Enter text">
+    <button onclick="document.getElementById('reverseResult').innerText = reverse(reverseInput.value);">Reverse</button>
+    <p id="reverseResult"></p>
+
+    <h2>Translate to Swedish</h2>
+    <input id="swedishInput" placeholder="Enter text">
+    <button onclick="document.getElementById('swedishResult').innerText = translateToSwedish(swedishInput.value);">Translate</button>
+    <p id="swedishResult"></p>
+</body>
+</html>
+

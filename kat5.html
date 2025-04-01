@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Functions</title>
+    <script>
+        function translate(text) {
+            return text.replace(/[^aeiou\s]/gi, c => c + "o" + c);
+        }
+
+        function sum(arr) {
+            return arr.reduce((a, b) => a + b, 0);
+        }
+
+        function multiply(arr) {
+            return arr.reduce((a, b) => a * b, 1);
+        }
+
+        function handleTranslate() {
+            document.getElementById("translationResult").innerText = translate(document.getElementById("textInput").value);
+        }
+
+        function handleSum() {
+            document.getElementById("sumResult").innerText = sum(document.getElementById("sumInput").value.split(",").map(Number));
+        }
+
+        function handleMultiply() {
+            document.getElementById("multiplyResult").innerText = multiply(document.getElementById("multiplyInput").value.split(",").map(Number));
+        }
+    </script>
+</head>
+<body>
+    <h2>Translator</h2>
+    <input id="textInput" placeholder="Enter text"><button onclick="handleTranslate()">Translate</button>
+    <p id="translationResult"></p>
+    
+    <h2>Sum</h2>
+    <input id="sumInput" placeholder="1,2,3"><button onclick="handleSum()">Sum</button>
+    <p id="sumResult"></p>
+    
+    <h2>Multiply</h2>
+    <input id="multiplyInput" placeholder="1,2,3"><button onclick="handleMultiply()">Multiply</button>
+    <p id="multiplyResult"></p>
+</body>
+</html>
+
